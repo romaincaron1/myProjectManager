@@ -4,4 +4,4 @@ Using Angular, Nodejs, MongoDB and Express
 
 ### Context
 
-4th year project in computer science in Web developpment
+4th year web developpment project in computer science at the University of Amiens

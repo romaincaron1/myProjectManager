@@ -1,6 +1,7 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
-const Joi = require('joi');
+const mongoose = require("mongoose");
+require("dotenv").config();
+const Joi = require("joi");
+Joi.objectId = require("joi-objectid")(Joi);
 
 // Project Schema
 const projectSchema = new mongoose.Schema({
@@ -19,34 +20,28 @@ const projectSchema = new mongoose.Schema({
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+    ref: "User",
     required: true,
-  },
-  members: {
-    type: [mongoose.Schema.Types.ObjectId],
-    ref: 'User',
-    required: false,
   },
   skills: {
     type: [mongoose.Schema.Types.ObjectId],
-    ref: 'Skill',
+    ref: "Skill",
     required: false,
   },
 });
 
-const Project = mongoose.model('Project', projectSchema);
+const Project = mongoose.model("Project", projectSchema);
 
 // Verify format
-function validateProject(project: object) {
-  const schema = {
+function validateProject(project) {
+  const schema = Joi.object({
     name: Joi.string().min(3).max(25).required(),
     description: Joi.string().min(3).max(255),
     owner: Joi.objectId().required(),
-    members: Joi.array().items(Joi.objectId()),
     skills: Joi.array().items(Joi.objectId()),
-  };
+  });
 
-  return Joi.validate(project, schema);
+  return schema.validate(project);
 }
 
 exports.Project = Project;
