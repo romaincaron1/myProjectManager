@@ -1,0 +1,248 @@
+:root {
+	--bs-font-sans-serif: "Poppins", sans-serif !important;
+	--title-font-sans-serif: "Sansita", sans-serif !important;
+	--bs-border-radius: 0rem !important;
+	--border-radius: 0px;	
+	
+	--color-blue: #5d639f;
+	--color-blue-300: #7a83ce;	
+	
+	--primary: #5d639f;
+	--on-primary:#fff;
+	--bs-border-color : var(--bs-gray-400);
+	
+	--bs-link-color-rgb:27, 151, 213;
+	--bs-success-rgb: 148, 183, 43;
+	--bs-danger-rgb: 224, 77, 75;
+	
+}
+
+body {
+	font-family: var(--bs-font-sans-serif);
+}
+a:hover {
+	text-decoration: none;
+}
+
+header{
+	background: linear-gradient(89.58deg,#1b97d596 .39%,#6c2380f0 98.36%);
+}
+
+hr{
+	border-top: 1px dashed var(--bs-gray-700);
+    margin: 2rem 0;
+}
+
+.fa {
+	color: black;
+	font-size: 1.5rem;
+}
+.badge{
+	--bs-badge-font-weight: 500;
+}
+
+.lead {
+	font-size: 1.5rem;
+}
+.heading{
+	font-family: var(--title-font-sans-serif);
+	color:var(--primary);
+}
+div.progress-bar.bg-light{
+	color:#444;
+}
+
+.color-blue{
+	color:var(--color-blue);
+}
+
+.btn {
+	border-radius: var(--bs-border-radius);
+}
+
+.btn-primary {
+	background-color: var(--primary) !important;
+	border-color: var(--primary) !important;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	background-color: var(--color-blue-300);
+	border-color: var(--color-blue-300);
+}
+.btn-secondary {
+	background-color: transparent;
+	color: var(--primary);
+	border-color: var(--primary);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+	background-color: var(--color-blue);
+	border-color: var(--color-blue);
+	color:#fff;
+}
+
+.btn i {
+	font-size: 13px;
+	margin-right: 5px;
+}
+i.item-activate {
+	cursor: pointer;
+}
+
+i.switch-status {
+	cursor: pointer;
+}
+
+@media (max-width: 768px) {
+	.inner-nav-btns a,
+	inner-nav-btns button {
+		width: 100%;
+		margin-bottom: 12px;
+	}
+}
+.form-label {
+	font-weight: 700;
+    font-size: .9rem;
+}
+.form-control,
+.form-select {
+	border-radius: var(--bs-border-radius);
+}
+
+.form-group {
+	margin-bottom: 1rem;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+	font-size: 0.9rem;
+	vertical-align: middle;
+	border-color: #e5e6e7;
+}
+.table-hover > tbody > tr:hover {
+	--bs-table-accent-bg: rgb(246 247 250);
+	color: var(--color-base);
+}
+
+table.table-valign tr td,
+table.table-valign tr th {
+	vertical-align: middle;
+}
+
+.table-success th,
+.table-success td{
+	background-color: #eef6d6;
+}
+.table-striped > tbody > tr.table-success:nth-of-type(odd) > * {
+    --bs-table-accent-bg: rgb(232, 243, 200) !important;
+}
+
+.table-danger th,
+.table-danger td{
+	background-color: #fae2e1;
+}
+.table-striped > tbody > tr.table-danger:nth-of-type(odd) > * {
+    --bs-table-accent-bg: #f5d0cf !important;
+}
+
+header .nav-link {
+	text-transform: uppercase;
+	font-size: 0.7rem;
+	letter-spacing: 1px;
+	display: flex;
+	color: #fff;
+	align-items: center;
+	font-weight: 700;
+}
+header .nav-link:hover {
+	color: #bbb;
+}
+header .nav-link i {
+	font-size: 14px;
+	margin-right: 0.5rem;
+	color: #fff;
+}
+
+@media (max-width: 768px) {
+	.nav.my-2 {
+		margin: 0 !important;
+	}
+}
+@media (max-width: 576px) {
+	header .nav-link {
+		border-radius: 50%;
+		width: 46px;
+		padding: 8px 0;
+		justify-content: center;
+	}
+	header .nav-link:hover {
+		background-color: #fff;
+	}
+	.nav-link span {
+		display: none;
+	}
+	header .nav-link i {
+		margin: 0;
+	}
+	header .nav-link:hover i {
+		color: #000;
+	}
+}
+
+#sidebar .nav-link {
+    color: #f2f2f2;
+    background-color: var(--color-blue);
+    border-radius: 0;
+}
+
+#sidebar .nav-item:hover .nav-link {
+	color: #fff;
+	background-color: var(--color-blue-300);
+}
+
+#sidebar .accordion-body{
+	padding:0;
+}
+
+#sidebar .accordion-button:not(.collapsed){
+    color: #000 !important;
+    font-weight: 500;
+    background: none;
+}
+
+#sidebar .accordion-button:not(.collapsed){
+    color: #000 !important;
+    font-weight: 500;
+    background: none;
+}
+
+@media (max-width: 767px) {
+	#sidebar {
+		margin: 1rem 0px 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
+	}
+	main {
+		margin-top: 2rem;
+	}
+	button[data-bs-toggle="collapse"] i {
+		display: inline-block;
+		height: 17px;
+		transition: all 0.2s linear;
+	}
+}
+
+@media (min-width: 768px) {
+	#sidebar {
+		position: relative;
+	}
+	#sidebar > div {
+		position: sticky;
+		top: 0;
+		left: 0;
+	}
+}
